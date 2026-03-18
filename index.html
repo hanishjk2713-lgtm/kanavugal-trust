@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KANAVUGAL TRUST</title>
+
+<link rel="icon" href="images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+
+.logo-circle{
+width:45px;
+height:45px;
+object-fit:cover;
+border-radius:50%;
+background:#0B1020;
+padding:3px;
+}
+ .logo-large{
+width:80px;
+height:80px;
+object-fit:cover;
+border-radius:50%;
+background:#0B1020;
+padding:5px;
+}
+
+/* GLOBAL */
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0B1020;
+color:white;
+overflow-x:hidden;
+}
+
+.section{padding:70px 20px;position:relative;}
+
+.section.glow::before{
+content:"";
+position:absolute;
+width:300px;height:300px;
+background:radial-gradient(circle,rgba(250,204,21,.08),transparent);
+top:20%;left:10%;
+filter:blur(80px);
+z-index:-1;
+}
+
+/* PREMIUM GOLD TEXT */
+.gold-text{
+background:linear-gradient(90deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:600;
+}
+
+/* LOADER */
+#loader{
+position:fixed;width:100%;height:100%;
+background:#0B1020;
+display:flex;justify-content:center;align-items:center;
+flex-direction:column;z-index:9999;
+}
+
+.loader-content img{animation:spin 2s linear infinite;}
+@keyframes spin{100%{transform:rotate(360deg);}}
+
+/* NAVBAR */
+
+.nav-link{
+transition:.3s;
+}
+
+.navbar{
+background:rgba(11,16,32,.9);
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.navbar.scrolled{
+background:#060a18;
+box-shadow:0 5px 20px rgba(0,0,0,.6);
+}
+
+.navbar-brand{
+color:var(--gold1) !important;
+}
+display:flex;align-items:center;
+font-weight:600;
+}
+
+.nav-link:hover{color:var(--gold1) !important;}
+
+.navbar-brand img{
+margin-right:8px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:
+linear-gradient(180deg, rgba(5,8,20,.65), rgba(5,8,20,.95)),
+radial-gradient(circle at top, rgba(250,204,21,.15), transparent 60%);
+z-index:1;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:110%;
+height:110%;
+background:url("https://images.unsplash.com/photo-1509099836639-18ba1795216d")
+center/cover no-repeat;
+animation:slowZoom 20s ease-in-out infinite alternate;
+z-index:0;
+}
+
+@keyframes slowZoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+/* BUTTON */
+.btn-gold{
+background:var(--gold-gradient);
+border:none;
+color:#000;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-gold:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+.trust-box{
+background:#111827;
+padding:25px;
+border-radius:10px;
+transition:.3s;
+height:100%;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.trust-box h5{
+color:var(--gold1);
+}
+margin-bottom:10px;
+}
+
+.trust-box:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,.6);
+}
+
+@keyframes pulseGlow{
+0%{box-shadow:0 0 10px rgba(250,204,21,.4);}
+50%{box-shadow:0 0 25px rgba(250,204,21,.9);}
+100%{box-shadow:0 0 10px rgba(250,204,21,.4);}
+}
+
+.gold-text{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.gold-bg{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+color:black;
+}
+
+/* GOLD SHINE EFFECT */
+.gold-shine{
+position:relative;
+display:inline-block;
+background:linear-gradient(90deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.gold-shine::after{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+transform:skewX(-25deg);
+animation:shine 3s infinite;
+}
+
+.gold{
+background:var(--gold-gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:600;
+}
+
+@keyframes shine{
+100%{
+left:125%;
+}
+}
+
+/* TITLES */
+.section-title{
+text-align:center;
+font-family:'Playfair Display',serif;
+margin-bottom:50px;
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-title:after{
+content:"";
+width:80px;
+height:2px;
+background:linear-gradient(90deg,#FFD700,#C9A227,#8B7500);
+display:block;
+margin:15px auto;
+}
+
+.impact-card{
+background:#111827;
+padding:35px 20px;
+border-radius:12px;
+transition:.3s;
+box-shadow:0 15px 35px rgba(0,0,0,.5);
+position:relative;
+overflow:hidden;
+}
+
+.impact-card::before{
+content:"";
+position:absolute;
+width:120%;
+height:120%;
+background:radial-gradient(circle,rgba(250,204,21,.15),transparent);
+top:-40%;
+left:-10%;
+}
+
+.impact-card h2{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:700;
+}
+
+.impact-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 50px rgba(0,0,0,.7);
+}
+/* CARDS */
+.card{
+background:#111827;border:none;color:white;
+transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+
+.card img{height:200px;object-fit:cover;}
+
+/* GALLERY */
+.gallery img{
+transition:.4s;
+border-radius:8px;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.testimonial{
+background:#111827;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+/* DONATION */
+.donation-section{background:#0b1228;}
+.donation-card{
+background:#111827;
+padding:30px;
+border-radius:10px;
+}
+
+.donation-card small{
+display:block;
+margin-top:8px;
+font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+background:#060a18;
+padding:40px;text-align:center;
+}
+
+/* PROGRESS BAR */
+#progressBar{
+position:fixed;
+top:0;left:0;height:4px;
+background:var(--gold-gradient);
+width:0%;
+z-index:9999;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero{
+height:90vh;
+padding:0 15px;
+}
+
+.hero h1{
+font-size:30px;
+line-height:1.3;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.logo-large{
+width:65px;
+height:65px;
+}
+
+.section{
+padding:55px 15px;
+}
+
+.card img{
+height:180px;
+}
+}
+
+.floating-donate{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--gold-gradient);
+color:black;
+padding:14px 20px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.5);
+z-index:999;
+transition:.3s;
+}
+
+.floating-donate:hover{
+transform:scale(1.1);
+box-shadow:0 15px 35px rgba(0,0,0,.7);
+}
+
+.navbar-toggler{
+border-color:white;
+}
+
+.navbar-toggler-icon{
+filter:invert(1);
+}
+
+.navbar-brand{
+font-weight:600;
+}
+
+:root{
+--gold1:#FFD700;
+--gold2:#C9A227;
+--gold3:#8B7500;
+--gold-gradient:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+}
+
+.container{
+max-width:1200px;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0B1020;
+color:white;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+<div class="loader-content">
+<img src="images/logo.png" class="logo-circle">
+<p>Loading Hope...</p>
+</div>
+</div>
+
+<div id="progressBar"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+
+<a class="navbar-brand" href="index.html">
+<img src="images/logo.png" class="logo-circle">
+<span class="gold">KANAVUGAL TRUST</span>
+
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="programs.html">Programs</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="donate.html">Donate</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content" data-aos="fade-up">
+
+<img src="images/logo.png" class="logo-large mb-3">
+
+<h1>
+<span style="color:white;">KANAVUGAL</span>
+<span class="gold">TRUST</span>
+</h1>
+
+<p class="mt-3 fs-5">
+A small act of kindness today can change a child's entire future.
+Join us in creating education, hope, and dignity for families in need.
+</p>
+
+<p style="opacity:.8;">
+Registered Public Charitable Trust • Tamil Nadu, India
+</p>
+
+<a href="donate.html" class="btn btn-gold mt-4">Donate Now</a>
+
+</div>
+</section>
+
+<section class="section glow text-center">
+<div class="container">
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="trust-box">
+<h5>✔ Registered NGO</h5>
+<p>Legally registered charitable trust ensuring transparency.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="trust-box">
+<h5>🔒 Secure Donations</h5>
+<p>Protected payments through verified gateways.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="trust-box">
+<h5>❤️ Direct Impact</h5>
+<p>Your contribution reaches real families and communities.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="section stats">
+<div class="container">
+
+<h2 class="section-title">Our Impact in Numbers</h2>
+
+<div class="row g-4 text-center">
+
+<div class="col-md-3">
+<div class="impact-card">
+<h2 class="counter" data-target="5000">1000+</h2>
+<p>Dreams Supported</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="impact-card">
+<h2 class="counter" data-target="200">70+</h2>
+<p>Programs Conducted</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="impact-card">
+<h2 class="counter" data-target="1000">500+</h2>
+<p>Families Helped</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="impact-card">
+<h2 class="counter" data-target="50">50+</h2>
+<p>Active Volunteers</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section glow" data-aos="fade-up">
+<div class="container">
+<h2 class="section-title">Changing Lives Every Day</h2>
+<p style="max-width:700px;margin:auto;">
+Every dream deserves a chance. KANAVUGAL TRUST works to uplift communities through education, welfare programs, and compassionate action.
+</p>
+</div>
+</section>
+
+<hr style="border-color:#1f2937;max-width:200px;margin:10px auto;">
+
+<!-- PROGRAMS -->
+<section class="section glow" style="padding-top:30px;" data-aos="fade-up">
+<div class="container">
+<h2 class="section-title gold-text">Our Programs</h2>
+<div class="row g-4">
+
+<div class="col-md-4">
+<a href="programs.html#education"class="text-decoration-none text-white">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+<div class="card-body">
+<h5>Education Support</h5>
+<p>Helping children achieve quality education.</p>
+</div>
+</div>
+</a>
+</div>
+
+<div class="col-md-4">
+<a href="programs.html#youth"class="text-decoration-none text-white">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<div class="card-body">
+<h5>Youth Empowerment</h5>
+<p>Skill development initiatives.</p>
+</div>
+</div>
+</a>
+</div>
+
+<div class="col-md-4">
+<a href="programs.html#community"class="text-decoration-none text-white">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac">
+<div class="card-body">
+<h5>Community Development</h5>
+<p>Supporting families and communities.</p>
+</div>
+</div>
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- IMPACT STORY -->
+<section class="section glow text-center">
+<div class="container">
+<h2 class="section-title">Real Impact Stories</h2>
+
+<div class="row align-items-center">
+<div class="col-md-6">
+<img src="https://images.unsplash.com/photo-1529390079861-591de354faf5"
+class="img-fluid rounded shadow">
+</div>
+
+<div class="col-md-6 text-start mt-4 mt-md-0">
+<h4>A Dream That Became Reality</h4>
+<p>
+Through KANAVUGAL TRUST, students received educational support
+and continued schooling successfully. Your contribution creates real transformation.
+</p>
+<a href="story.html" class="btn btn-gold">Read More Stories</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- VOLUNTEER -->
+<section class="section glow text-center" style="background:#0b1228;">
+<div class="container">
+<h2>Become a Volunteer</h2>
+<p class="mt-3">Join hands with us to create meaningful change.</p>
+<a href="volunteer.html" class="btn btn-gold">Join Now</a>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section glow" data-aos="fade-up">
+<div class="container">
+<h2 class="section-title">Voices of Hope</h2>
+
+<div class="row">
+<div class="col-md-4"><p>"KANAVUGAL TRUST changed our lives."</p><strong>- Community Member</strong></div>
+<div class="col-md-4"><p>"A truly impactful organization."</p><strong>- Volunteer</strong></div>
+<div class="col-md-4"><p>"Every donation reaches the needy."</p><strong>- Supporter</strong></div>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST CREDIBILITY STRIP -->
+<section class="section glow" style="padding-top:50px;padding-bottom:50px;">
+<div class="container">
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+<div class="trust-box">
+<h5>✔ Registered Trust</h5>
+<p>Legally registered public charitable trust in Tamil Nadu.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="trust-box">
+<h5>✔ Transparent Donations</h5>
+<p>Every contribution is used directly for community programs.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="trust-box">
+<h5>✔ Direct Impact</h5>
+<p>Supporting education, families, and social welfare initiatives.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="trust-box">
+<h5>✔ Community Driven</h5>
+<p>Powered by volunteers and compassionate supporters.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- DONATION -->
+<section class="section glow" data-aos="fade-up">
+<div class="container">
+
+<h2 class="section-title">Support a Dream Today</h2>
+
+<p class="text-center" style="opacity:.8;">
+100% of donations go directly to community programs.
+</p>
+
+<p class="text-center gold-text">
+Your small action today can change a life forever.
+</p>
+<div class="row justify-content-center g-4">
+
+<div class="col-md-3">
+<div class="donation-card">
+<h3>₹100</h3>
+<p>📚 Provides school supplies for one child</p>
+<small style="opacity:.7;">Your support helps education</small>
+<a href="donate.html" class="btn btn-gold w-100">Donate</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="donation-card">
+<h3>₹500</h3>
+<p>🍛 Feeds a family for one week</p>
+<small style="opacity:.7;">Direct community support</small>
+<a href="donate.html" class="btn btn-gold w-100">Donate</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="donation-card">
+<h3>₹1000</h3>
+<p>🎓 Sponsors education support</p>
+<small style="opacity:.7;">Creates long-term impact</small>
+<a href="donate.html" class="btn btn-gold w-100">Donate</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section glow text-center" style="background:#111827;">
+<div class="container">
+<h2>You Can Change Someone’s Story Today</h2>
+<p class="mt-3">
+A small act of kindness today can shape a lifetime tomorrow.
+</p>
+<p class="gold-text">
+Together we can create lasting change.
+</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<img src="images/logo.png" class="logo-large mb-2">
+<h5 class="gold-text">KANAVUGAL TRUST</h5>
+<p>To make others dream as reality.</p>
+<p style="opacity:.7;">© 2026 KANAVUGAL TRUST</p>
+<p style="opacity:.7;">
+Registered Public Charitable Trust • Tamil Nadu • India
+</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({duration:1000,once:true});
+
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.display="none";
+});
+
+window.addEventListener("scroll",function(){
+document.querySelector(".navbar")
+.classList.toggle("scrolled",window.scrollY>50);
+});
+
+window.onscroll=function(){
+let winScroll=document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+document.getElementById("progressBar").style.width=(winScroll/height)*100+"%";
+};
+</script>
+
+<a href="donate.html" class="floating-donate">❤ Donate</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer | KANAVUGAL TRUST</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:#0B1020;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+background:#060a18;
+padding:15px 0;
+}
+
+.logo-circle{
+width:40px;
+height:40px;
+border-radius:50%;
+object-fit:cover;
+margin-right:10px;
+}
+
+.gold-text{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:600;
+}
+
+.section{
+padding:80px 20px;
+}
+
+/* FORM CARD */
+.form-card{
+background:#111827;
+padding:35px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+input, textarea{
+background:#0B1020 !important;
+border:1px solid #1f2937 !important;
+color:white !important;
+}
+
+input:focus, textarea:focus{
+border-color:#FACC15 !important;
+box-shadow:none !important;
+}
+
+/* BUTTON */
+.btn-gold{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+border:none;
+color:black;
+font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<nav class="navbar">
+<div class="container d-flex justify-content-between">
+
+<a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+<img src="images/logo.png" class="logo-circle">
+<span class="gold-text">KANAVUGAL TRUST</span>
+</a>
+
+<a href="index.html" class="btn btn-gold btn-sm">Home</a>
+
+</div>
+</nav>
+
+
+<!-- VOLUNTEER FORM -->
+<section class="section">
+<div class="container">
+
+<h2 class="text-center gold-text mb-5">Become a Volunteer</h2>
+
+<div class="row justify-content-center">
+<div class="col-md-7">
+
+<div class="form-card">
+
+<form action="https://formsubmit.co/YOURMAIL@gmail.com" method="POST">
+
+<!-- Replace email later -->
+
+<input type="hidden" name="_captcha" value="false">
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" name="Name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Mobile Number</label>
+<input type="tel" name="Mobile" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>City</label>
+<input type="text" name="City" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Gmail</label>
+<input type="email" name="Email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Why do you want to join KANAVUGAL TRUST?</label>
+<textarea name="Reason"
+class="form-control"
+rows="5"
+maxlength="500"
+required></textarea>
+</div>
+
+<button type="submit" class="btn btn-gold w-100">
+Submit Application
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>

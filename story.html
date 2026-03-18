@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Stories | KANAVUGAL TRUST</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+background:#0B1020;
+border-bottom:1px solid rgba(255,255,255,0.08);
+padding:15px 0;
+z-index:1000;
+}
+
+.logo-text{
+font-weight:700;
+font-size:22px;
+text-decoration:none;
+}
+
+.logo-kanavugal{
+color:white;
+}
+
+.logo-trust{
+background:linear-gradient(90deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 4s linear infinite;
+}
+
+/* LOGO SIZE FIX */
+.logo-circle{
+width:45px;
+height:45px;
+object-fit:cover;
+border-radius:50%;
+background:#0B1020;
+padding:3px;
+}
+
+@keyframes shine{
+0%{background-position:-200px;}
+100%{background-position:200px;}
+}
+
+/* push content below fixed navbar */
+body{
+padding-top:80px;
+}
+
+body{
+background:#0B1020;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+.section{padding:80px 20px;}
+
+.story-card{
+background:#111827;
+border-radius:12px;
+padding:25px;
+height:100%;
+transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.story-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+
+.btn-gold{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+border:none;
+color:black;
+font-weight:600;
+}
+
+.gold-text{
+background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-title{
+text-align:center;
+font-family:'Playfair Display',serif;
+margin-bottom:50px;
+}
+
+.full-story{
+display:none;
+margin-top:15px;
+opacity:.85;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<nav class="navbar">
+<div class="container d-flex justify-content-between">
+
+<a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+<img src="images/logo.png" class="logo-circle">
+<span class="gold-text">KANAVUGAL TRUST</span>
+</a>
+
+<a href="index.html" class="btn btn-gold btn-sm">Home</a>
+
+</div>
+</nav>
+
+
+<section class="section">
+<div class="container">
+
+<h1 class="section-title gold-text">Real Impact Stories</h1>
+
+<div class="row g-4">
+
+<!-- STORY 1 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Priya — Coimbatore</h5>
+
+<p>
+Priya almost stopped her education due to financial struggles,
+but support from KANAVUGAL TRUST helped her continue schooling.
+</p>
+
+<div class="full-story">
+<p>
+With educational materials and mentorship support, Priya
+completed her academic year successfully and now dreams of
+becoming a teacher to help other children like her.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+<!-- STORY 2 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Arun — Chennai</h5>
+
+<p>
+Arun’s family faced severe hardship during unemployment.
+Community food support helped them regain stability.
+</p>
+
+<div class="full-story">
+<p>
+Regular welfare assistance allowed Arun to focus on skill
+training programs. Today he works in a small company and
+supports his family independently.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+<!-- STORY 3 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Meena — Madurai</h5>
+
+<p>
+Meena joined youth empowerment workshops that improved her
+confidence and communication skills.
+</p>
+
+<div class="full-story">
+<p>
+After training sessions, Meena started leading community
+activities and inspiring other young women to pursue education.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+<!-- STORY 4 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Rahul — Trichy</h5>
+
+<p>
+Rahul received school supplies through donation programs,
+allowing him to return to school.
+</p>
+
+<div class="full-story">
+<p>
+His academic performance improved drastically and he now aims
+to become an engineer, proving small help creates big change.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+<!-- STORY 5 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Selvi — Erode</h5>
+
+<p>
+Healthcare awareness programs helped Selvi’s family access
+medical support during difficult times.
+</p>
+
+<div class="full-story">
+<p>
+The initiative improved health conditions and encouraged
+community participation in wellness programs.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+<!-- STORY 6 -->
+<div class="col-md-4">
+<div class="story-card">
+<h5>Kumar — Salem</h5>
+
+<p>
+Volunteer-led mentoring helped Kumar develop technical skills
+and confidence for employment.
+</p>
+
+<div class="full-story">
+<p>
+Today Kumar actively volunteers with the trust, helping other
+students build career paths and opportunities.
+</p>
+</div>
+
+<button class="btn btn-gold btn-sm"
+onclick="toggleStory(this)">
+Read More
+</button>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<script>
+function toggleStory(button){
+let story = button.previousElementSibling;
+
+if(story.style.display==="block"){
+story.style.display="none";
+button.innerText="Read More";
+}else{
+story.style.display="block";
+button.innerText="Show Less";
+}
+}
+</script>
+
+</body>
+</html>
