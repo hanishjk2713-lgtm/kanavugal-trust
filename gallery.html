@@ -17,6 +17,13 @@
 
 <style>
 
+:root{
+--gold1:#FFD700;
+--gold2:#C9A227;
+--gold3:#8B7500;
+--gold-gradient:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+}
+
 
 body{
 font-family:'Poppins',sans-serif;
@@ -33,17 +40,21 @@ backdrop-filter:blur(10px);
 }
 
 .navbar-brand{
-color:#FACC15 !important;
 font-weight:600;
+background:var(--gold-gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.nav-link:hover{color:#FACC15 !important;}
+.nav-link:hover{color:#FFD700 !important;}
 
 .logo-circle{
-height:40px;
-width:auto;
+width:45px;
+height:45px;
 border-radius:50%;
 object-fit:cover;
+background:#0B1020;
+padding:3px;
 }
 
 /* HERO */
@@ -75,7 +86,7 @@ margin-bottom:40px;
 .section-title:after{
 content:"";
 width:80px;height:2px;
-background:#FACC15;
+background:var(--gold-gradient);
 display:block;margin:15px auto;
 }
 
@@ -129,13 +140,13 @@ border-radius:12px;
 }
 
 /* BUTTON */
-
 .btn-gold{
-background:linear-gradient(135deg,#FACC15,#eab308);
+background:var(--gold-gradient);
 border:none;
 color:black;
 font-weight:600;
 padding:12px 28px;
+transition:.3s;
 }
 
 /* FLOAT DONATE */
@@ -144,7 +155,7 @@ padding:12px 28px;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#FACC15;
+background:var(--gold-gradient);
 color:black;
 padding:14px 20px;
 border-radius:50px;
@@ -162,6 +173,21 @@ padding:40px;
 text-align:center;
 }
 
+
+.navbar-toggler{
+border-color:rgba(255,255,255,.2);
+}
+
+.navbar-toggler-icon{
+filter:invert(1);
+}
+
+.gold-text{
+background:var(--gold-gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
 </style>
 </head>
 
@@ -172,17 +198,44 @@ text-align:center;
 <div class="container">
 
 <a class="navbar-brand" href="index.html">
-<img src="images/logo.png" height="40"> KANAVUGAL TRUST
+<img src="images/logo.png" class="logo-circle">
+KANAVUGAL TRUST
 </a>
 
-<div class="collapse navbar-collapse justify-content-end">
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
 <ul class="navbar-nav">
-<li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
-<li class="nav-item"><a class="nav-link text-white" href="programs.html">Programs</a></li>
-<li class="nav-item"><a class="nav-link text-warning" href="gallery.html">Gallery</a></li>
-<li class="nav-item"><a class="nav-link text-white" href="donate.html">Donate</a></li>
-<li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+
+<li class="nav-item">
+<a class="nav-link text-white" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-white" href="about.html">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-white" href="programs.html">Programs</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-warning" href="gallery.html">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-white" href="donate.html">Donate</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-white" href="contact.html">Contact</a>
+</li>
+
 </ul>
 </div>
 
@@ -219,44 +272,33 @@ Your contribution helps create more stories like these.
 <div class="col-md-4">
 <div class="gallery-item">
 <img src="images/gallery/g1.jpg">
-<div class="overlay"><span>Community Support</span></div>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="gallery-item">
 <img src="images/gallery/g2.jpg">
-<div class="overlay"><span>Education Program</span></div>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="gallery-item">
 <img src="images/gallery/g3.jpg">
-<div class="overlay"><span>Volunteer Activity</span></div>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="gallery-item">
 <img src="images/gallery/g4.jpg">
-<div class="overlay"><span>Charity Event</span></div>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="gallery-item">
 <img src="images/gallery/g5.jpg">
-<div class="overlay"><span>Community Outreach</span></div>
 </div>
 </div>
 
-<div class="col-md-4">
-<div class="gallery-item">
-<img src="images/gallery/g6.jpg">
-<div class="overlay"><span>Impact Stories</span></div>
-</div>
-</div>
 
 </div>
 </div>
@@ -269,13 +311,25 @@ Your contribution helps create more stories like these.
 <h2 class="section-title">Video Stories</h2>
 
 <div class="row g-4">
-<div class="col-md-6 video-box">
-<iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+
+<div class="col-md-4">
+<video controls class="w-100 rounded">
+<source src="videos/v1.mp4" type="video/mp4">
+</video>
 </div>
 
-<div class="col-md-6 video-box">
-<iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+<div class="col-md-4">
+<video controls class="w-100 rounded">
+<source src="videos/v2.mp4" type="video/mp4">
+</video>
 </div>
+
+<div class="col-md-4">
+<video controls class="w-100 rounded">
+<source src="videos/v3.mp4" type="video/mp4">
+</video>
+</div>
+
 </div>
 
 </div>
@@ -294,8 +348,8 @@ Your contribution helps create more stories like these.
 </section>
 
 <footer class="footer">
-<img src="images/logo.png" width="70" class="mb-3">
-<h5 style="color:#FACC15;">KANAVUGAL TRUST</h5>
+<img src="images/logo.png" class="logo-circle">
+<h5 class="gold-text">KANAVUGAL TRUST</h5>
 <p>© 2026 KANAVUGAL TRUST</p>
 </footer>
 
