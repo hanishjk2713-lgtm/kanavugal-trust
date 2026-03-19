@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Programs | KANAVUGAL TRUST</title>
 
@@ -17,12 +17,26 @@
 
 <style>
 
+/* ===== GLOBAL MOBILE FIX ===== */
+*,
+*::before,
+*::after{
+box-sizing:border-box;
+}
+
+html, body{
+max-width:100%;
+overflow-x:hidden;
+}
+
+
 body{
 font-family:'Poppins',sans-serif;
 background:#0B1020;
 color:white;
 overflow-x:hidden;
 scroll-behavior:smooth;
+padding-top:80px;
 }
 
 :root{
@@ -46,8 +60,10 @@ backdrop-filter:blur(10px);
 }
 
 .navbar-brand{
-color:#FACC15 !important;
 font-weight:600;
+background:var(--gold-gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .nav-link:hover{color:var(--gold1) !important;}
@@ -242,9 +258,6 @@ text-align:center;
 padding:60px 15px;
 }
 
-.page-hero{
-margin-top:65px;
-}
 
 .page-hero h1{
 font-size:30px;
@@ -273,9 +286,6 @@ border-color:rgba(255,255,255,.2);
 filter:invert(1);
 }
 
-.page-hero{
-margin-top:70px;
-}
 
 </style>
 </head>
@@ -288,7 +298,7 @@ margin-top:70px;
 
 <a class="navbar-brand" href="index.html">
 <img src="images/logo.png" class="logo-circle">
- KANAVUGAL TRUST
+<span class="gold">KANAVUGAL TRUST</span>
 </a>
 
 <button class="navbar-toggler" type="button"
