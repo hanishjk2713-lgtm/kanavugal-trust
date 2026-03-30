@@ -7,8 +7,10 @@
 <title>Volunteer | KANAVUGAL TRUST</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <style>
 
@@ -33,14 +35,14 @@ margin-right:10px;
 }
 
 .gold-text{
-background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+background:linear-gradient(135deg,#FFD700,#D4AF37,#8B7500);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 font-weight:600;
 }
 
 .section{
-padding:80px 20px;
+padding:70px 20px;
 }
 
 /* FORM CARD */
@@ -58,16 +60,37 @@ color:white !important;
 }
 
 input:focus, textarea:focus{
-border-color:#FACC15 !important;
+border-color:#D4AF37 !important;
 box-shadow:none !important;
 }
 
 /* BUTTON */
 .btn-gold{
-background:linear-gradient(135deg,#FFD700,#C9A227,#8B7500);
+background:linear-gradient(135deg,#FFD700,#D4AF37,#8B7500);
 border:none;
 color:black;
 font-weight:600;
+}
+
+/* SUCCESS POPUP */
+.success-popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0.8);
+background:#111827;
+padding:30px 40px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.7);
+z-index:9999;
+opacity:0;
+transition:.3s;
+}
+
+.success-popup.show{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
 }
 
 </style>
@@ -75,7 +98,7 @@ font-weight:600;
 
 <body>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 <nav class="navbar">
 <div class="container d-flex justify-content-between">
 
@@ -89,7 +112,6 @@ font-weight:600;
 </div>
 </nav>
 
-
 <!-- VOLUNTEER FORM -->
 <section class="section">
 <div class="container">
@@ -101,42 +123,34 @@ font-weight:600;
 
 <div class="form-card">
 
-<form action="https://formsubmit.co/YOURMAIL@gmail.com" method="POST">
-
-<!-- Replace email later -->
-
-<input type="hidden" name="_captcha" value="false">
+<form id="volunteerForm">
 
 <div class="mb-3">
 <label>Name</label>
-<input type="text" name="Name" class="form-control" required>
+<input type="text" name="name" class="form-control" required>
 </div>
 
 <div class="mb-3">
 <label>Mobile Number</label>
-<input type="tel" name="Mobile" class="form-control" required>
+<input type="tel" name="mobile" class="form-control" required>
 </div>
 
 <div class="mb-3">
 <label>City</label>
-<input type="text" name="City" class="form-control" required>
+<input type="text" name="city" class="form-control" required>
 </div>
 
 <div class="mb-3">
-<label>Gmail</label>
-<input type="email" name="Email" class="form-control" required>
+<label>Email</label>
+<input type="email" name="email" class="form-control" required>
 </div>
 
 <div class="mb-3">
 <label>Why do you want to join KANAVUGAL TRUST?</label>
-<textarea name="Reason"
-class="form-control"
-rows="5"
-maxlength="500"
-required></textarea>
+<textarea name="reason" class="form-control" rows="5" required></textarea>
 </div>
 
-<button type="submit" class="btn btn-gold w-100">
+<button class="btn btn-gold w-100">
 Submit Application
 </button>
 
@@ -148,6 +162,48 @@ Submit Application
 
 </div>
 </section>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="success-popup">
+<h4 style="color:#D4AF37;">✅ Application Submitted</h4>
+<p>Thank you for volunteering with us.</p>
+</div>
+
+<script>
+
+/* EMAILJS INIT */
+(function(){
+emailjs.init("8D9d4YpfyCn_fd5G3");
+})();
+
+/* SEND MAIL */
+document.getElementById("volunteerForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"service_flyz5wo",
+"template_jbatgxc",
+this
+)
+.then(()=>{
+
+document.getElementById("successPopup").classList.add("show");
+this.reset();
+
+setTimeout(()=>{
+document.getElementById("successPopup").classList.remove("show");
+},3000);
+
+}, (error)=>{
+alert("❌ Failed. Try again.");
+console.log(error);
+});
+
+});
+
+</script>
 
 </body>
 </html>
